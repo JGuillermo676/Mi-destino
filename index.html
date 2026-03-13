@@ -13,10 +13,9 @@
     background: radial-gradient(circle at top, #111 0%, #000 70%);
     color: white;
     min-height: 100vh;
-    overflow-y: auto; /* Permite scroll vertical */
+    overflow-y: auto;
   }
 
-  /* Tarjeta */
   .card {
     background: rgba(20, 20, 30, 0.85);
     border-radius: 20px;
@@ -25,7 +24,7 @@
     width: 85%;
     max-width: 350px;
     text-align: center;
-    margin: 40px auto; /* centrado horizontal con margen arriba y abajo */
+    margin: 40px auto;
     position: relative;
     z-index: 1;
     backdrop-filter: blur(6px);
@@ -36,12 +35,6 @@
     color: #cfa7ff;
     font-size: 1.7rem;
     margin-bottom: 6px;
-  }
-
-  h2 {
-    color: #aaa;
-    font-size: 0.95rem;
-    margin-bottom: 12px;
   }
 
   .poem {
@@ -85,7 +78,6 @@
     display: none;
   }
 
-  /* Estrellas flotando */
   .emoji {
     position: absolute;
     top: -50px;
@@ -104,86 +96,78 @@
 
 <body>
 
-<!-- Música de fondo -->
-<audio id="backgroundMusic" autoplay loop>
+<!-- Música -->
+<audio id="backgroundMusic" loop>
   <source src="musica.mp3" type="audio/mpeg">
 </audio>
 
 <div class="card">
   <h1>Para Danna ✨</h1>
+
   <div class="poem">
 Mientras hablábamos ese día, el cielo estaba sobre nosotros.
 
 Había miles de estrellas brillando en silencio. Eran como testigos de algo que parecía una simple conversación. Pero con el tiempo, significaría mucho más para mí.
 
-Tal vez para el mundo fue solo un momento cualquiera. Una noche normal, como tantas otras que pasan sin que nadie las recuerde. Pero para mí fue diferente. Sin darme cuenta, entre palabras simples, risas y momentos que parecían pequeños, estaba empezando a conocer a alguien que poco a poco ocuparía un lugar muy especial en mi vida.
-
-A veces pienso en lo curioso que es todo esto. El mundo es enorme. Hay millones de personas viviendo sus propias historias. Hay millones de caminos que cada uno puede tomar. Y millones de coincidencias que ocurren cada segundo.
-
-Y aunque haya tantas posibilidades, nuestras vidas se cruzaron.
+Tal vez para el mundo fue solo un momento cualquiera. Pero para mí fue diferente.
 
 Entre tantas personas, encontré a alguien como tú.
 
-Al principio, todo parecía sencillo. Solo dos personas hablando, conociéndose poco a poco. Pero con el tiempo, algo empezó a cambiar. Empecé a esperar esos momentos, esas conversaciones. Empecé a sentir que algo era distinto.
+Ese día, mientras hablábamos bajo el cielo estrellado, algo empezó a crecer dentro de mí.
 
-Ese día, mientras hablábamos bajo el cielo estrellado, algo empezó a crecer dentro de mí. Tal vez no lo entendía del todo en ese momento. Pero ahora sí lo sé. Ese fue uno de esos momentos que, aunque parezcan simples, se quedan en el corazón.
+Me gusta pensar que las estrellas estaban observando todo en silencio.
 
-Me gusta pensar que las estrellas estaban observando todo en silencio. Como si guardaran ese instante. Como si supieran que algún día recordaría ese momento con una sonrisa.
+Hay momentos en la vida que parecen pequeños. Pero con el tiempo te das cuenta de que eran el comienzo de algo importante.
 
-Hay momentos en la vida que parecen pequeños. Pero con el tiempo, te das cuenta de que eran el comienzo de algo importante.
+Cada vez que pienso en ti, pienso en lo increíble que fue que nuestras vidas coincidieran.
 
-Y para mí, ese fue uno de ellos.
+Aunque ahora haya distancia entre nosotros, el cielo sigue siendo el mismo.
 
-Cada vez que pienso en ti, pienso en lo increíble que fue que nuestras vidas coincidieran. La vida decidió cruzar nuestra historia con la tuya.
-
-Aunque ahora haya distancia entre nosotros, siempre recuerdo que el cielo sigue siendo el mismo.
-
-Las mismas estrellas que brillaban aquella noche siguen ahí. Siguen iluminando la noche. Siguen estando presentes.
+Las mismas estrellas que brillaban aquella noche siguen ahí.
 
 Están sobre ti y sobre mí.
 
-A veces pienso que tú también miras el cielo. Tal vez una noche tranquila. Tal vez ves una estrella brillante. O simplemente te quedas mirando el cielo.
-
-Y en ese mismo instante, puede que yo también esté mirando hacia arriba.
-
-Dos personas en lugares diferentes. Mirando las mismas estrellas.
+Dos personas en lugares diferentes mirando las mismas estrellas.
 
 La distancia deja de sentirse tan grande.
 
-Aunque no estemos en el mismo sitio, compartimos algo enorme. El mismo cielo. Las mismas estrellas. El mismo universo que estaba allí el día que empezamos a hablar.
+Porque compartimos el mismo cielo.
 
-Eso me gusta recordarlo.
-
-Me recuerda que hay cosas que siguen conectando a las personas.
-
-Me recuerda que hay momentos que se quedan contigo para siempre.
-
-Y me recuerda lo afortunado que fui el día que nuestras vidas coincidieron.
-
-La vida te pone delante a personas que simplemente pasan. Pero otras veces te pone delante a alguien que cambia tus días.
-
-Alguien que aparece en tus pensamientos sin avisar.
-
-Alguien que hace que las cosas simples se sientan un poco más bonitas.
-
-Y si miras el cielo y recuerdas este momento, quiero que sepas algo.
+Y si miras las estrellas y recuerdas este momento, quiero que sepas algo.
 
 En algún lugar, bajo estas mismas estrellas, hay alguien que sonríe cuando piensa en ti.
 
 Alguien que se siente afortunado de haberte encontrado.
 
-Alguien que nunca olvidará el día en que empezó todo.
-
 Y para mí, esa persona siempre serás tú.
   </div>
 
   <button id="showPhotoBtn">Haz clic aquí</button>
-  <img id="personalPhoto" src="estrella.jpg" alt="Foto personal">
-  <div id="specialMessage">✨Entre todas las estrellas, tú eres la que más brilla ✨</div>
+
+  <img id="personalPhoto" src="estrella.jpg">
+
+  <div id="specialMessage">
+  ✨Entre todas las estrellas, tú eres la que más brilla ✨
+  </div>
+
 </div>
 
 <script>
-  // Mostrar foto y mensaje
+
+  /* reproducir música cuando el usuario toque la pantalla */
+  const music = document.getElementById("backgroundMusic");
+
+  function startMusic(){
+    music.play().catch(()=>{});
+    document.removeEventListener("click", startMusic);
+    document.removeEventListener("touchstart", startMusic);
+  }
+
+  document.addEventListener("click", startMusic);
+  document.addEventListener("touchstart", startMusic);
+
+
+  /* mostrar foto y mensaje */
   const button = document.getElementById("showPhotoBtn");
   const photo = document.getElementById("personalPhoto");
   const message = document.getElementById("specialMessage");
@@ -194,7 +178,8 @@ Y para mí, esa persona siempre serás tú.
     button.style.display = "none";
   });
 
-  // Estrellas del universo
+
+  /* estrellas flotando */
   const stars = ['✨','⭐','🌟','✦','✧'];
   const totalStars = 70;
 
@@ -208,6 +193,8 @@ Y para mí, esa persona siempre serás tú.
     span.style.animationDelay = Math.random() * 5 + 's';
     document.body.appendChild(span);
   }
+
 </script>
+
 </body>
 </html>
