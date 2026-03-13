@@ -1,9 +1,9 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="es">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Para DaniCa</title>
+<title>Para Danna ✨</title>
 
 <style>
   body {
@@ -13,34 +13,34 @@
     background: radial-gradient(circle at top, #111 0%, #000 70%);
     color: white;
     min-height: 100vh;
-    overflow-y: auto; /* Permite scroll vertical */
+    overflow-y: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
-  /* Botón de inicio de música */
-  #startMusicBtn {
-    position: fixed;
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    padding: 15px 30px;
-    font-size: 1rem;
+  /* Botón de inicio */
+  #openBtn {
+    padding: 20px 40px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white;
+    background: linear-gradient(135deg, #8a5cff, #cfa7ff);
     border: none;
     border-radius: 25px;
-    background: linear-gradient(135deg, #8a5cff, #cfa7ff);
-    color: white;
     cursor: pointer;
-    z-index: 10;
-    box-shadow: 0 0 15px rgba(255,255,255,0.3);
+    box-shadow: 0 0 20px rgba(255,255,255,0.3);
     transition: transform 0.3s, box-shadow 0.3s;
   }
 
-  #startMusicBtn:hover {
+  #openBtn:hover {
     transform: scale(1.05);
-    box-shadow: 0 0 20px #cfa7ff;
+    box-shadow: 0 0 25px #cfa7ff;
   }
 
-  /* Tarjeta */
+  /* Tarjeta del mensaje (inicialmente oculta) */
   .card {
+    display: none;
     background: rgba(20, 20, 30, 0.85);
     border-radius: 20px;
     box-shadow: 0 0 25px rgba(255,255,255,0.15);
@@ -48,7 +48,7 @@
     width: 85%;
     max-width: 350px;
     text-align: center;
-    margin: 40px auto; /* centrado horizontal con margen arriba y abajo */
+    margin: 40px auto;
     position: relative;
     z-index: 1;
     backdrop-filter: blur(6px);
@@ -70,7 +70,7 @@
     white-space: pre-line;
   }
 
-  button {
+  button.messageBtn {
     margin-top: 12px;
     padding: 9px 18px;
     font-size: 0.9rem;
@@ -82,7 +82,7 @@
     transition: transform 0.3s, box-shadow 0.3s;
   }
 
-  button:hover {
+  button.messageBtn:hover {
     transform: scale(1.05);
     box-shadow: 0 0 12px #cfa7ff;
   }
@@ -121,8 +121,8 @@
 
 <body>
 
-<!-- Botón para iniciar música -->
-<button id="startMusicBtn">🎵 Haz clic para escuchar música</button>
+<!-- Botón inicial -->
+<button id="openBtn">Ábreme</button>
 
 <!-- Música de fondo -->
 <audio id="backgroundMusic" loop>
@@ -130,7 +130,8 @@
   Tu navegador no soporta audio.
 </audio>
 
-<div class="card">
+<!-- Tarjeta con mensaje -->
+<div class="card" id="messageCard">
   <h1>Para Danna ✨</h1>
   <div class="poem">
 Mientras hablábamos ese día, el cielo estaba sobre nosotros.
@@ -198,33 +199,34 @@ Alguien que nunca olvidará el día en que empezó todo.
 Y para mí, esa persona siempre serás tú.
   </div>
 
-  <button id="showPhotoBtn">Haz clic aquí</button>
+  <button class="messageBtn" id="showPhotoBtn">Haz clic aquí</button>
   <img id="personalPhoto" src="estrella.jpg" alt="Foto personal">
   <div id="specialMessage">✨Entre todas las estrellas, tú eres la que más brilla ✨</div>
 </div>
 
 <script>
-  // Botón para iniciar música
-  const startBtn = document.getElementById("startMusicBtn");
+  const openBtn = document.getElementById("openBtn");
   const music = document.getElementById("backgroundMusic");
+  const messageCard = document.getElementById("messageCard");
 
-  startBtn.addEventListener("click", () => {
-    music.play();
-    startBtn.style.display = "none"; // ocultar botón después de iniciar
+  openBtn.addEventListener("click", () => {
+    music.play();                // empieza la música
+    messageCard.style.display = "block"; // muestra todo el mensaje
+    openBtn.style.display = "none";      // oculta el botón inicial
   });
 
-  // Mostrar foto y mensaje
-  const button = document.getElementById("showPhotoBtn");
+  // Mostrar foto y mensaje especial
+  const showPhotoBtn = document.getElementById("showPhotoBtn");
   const photo = document.getElementById("personalPhoto");
-  const message = document.getElementById("specialMessage");
+  const specialMsg = document.getElementById("specialMessage");
 
-  button.addEventListener("click", () => {
+  showPhotoBtn.addEventListener("click", () => {
     photo.style.display = "block";
-    message.style.display = "block";
-    button.style.display = "none";
+    specialMsg.style.display = "block";
+    showPhotoBtn.style.display = "none";
   });
 
-  // Estrellas del universo
+  // Estrellas flotantes
   const stars = ['✨','⭐','🌟','✦','✧'];
   const totalStars = 70;
 
