@@ -6,23 +6,34 @@
 <title>Para Danna ✨</title>
 
 <style>
-  body {
+  html, body {
     margin: 0;
     padding: 0;
     font-family: "Segoe UI", sans-serif;
+    height: 100%;
+    width: 100%;
+  }
 
-    /* Fondo desde GitHub Pages */
-    background-image: url('https://raw.githubusercontent.com/TU_USUARIO/TU_REPO/main/fondo.jpg');
+  body {
+    /* Fondo de toda la página */
+    background-image: url('fondo.jpg'); /* Tu imagen en GitHub */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-
     color: white;
-    min-height: 100vh;
     overflow-y: auto;
+  }
+
+  /* Contenedor central */
+  .container {
+    width: 100%;
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
+    padding: 20px;
+    box-sizing: border-box;
   }
 
   /* Botón de inicio */
@@ -37,8 +48,6 @@
     cursor: pointer;
     box-shadow: 0 0 20px rgba(255,255,255,0.3);
     transition: transform 0.3s, box-shadow 0.3s;
-    z-index: 10;
-    position: relative;
   }
 
   #openBtn:hover {
@@ -48,19 +57,16 @@
 
   /* Tarjeta del mensaje */
   .card {
-    display: none;
-    background: rgba(20, 20, 30, 0.65); /* vidrio más ligero para ver el fondo */
+    display: none; /* oculto al inicio */
+    background: rgba(20, 20, 30, 0.85); /* vidrio */
     border-radius: 20px;
     box-shadow: 0 0 25px rgba(255,255,255,0.15);
-    padding: 15px 20px;
-    width: 85%;
-    max-width: 350px;
+    padding: 20px;
+    width: 90%;
+    max-width: 400px;
     text-align: center;
-    margin: 40px auto;
-    position: relative;
-    z-index: 5;
     backdrop-filter: blur(6px);
-    transform: scale(0.7);
+    margin-top: 20px;
   }
 
   h1 {
@@ -110,6 +116,7 @@
     display: none;
   }
 
+  /* Estrellas flotando */
   .emoji {
     position: absolute;
     top: -50px;
@@ -128,8 +135,23 @@
 
 <body>
 
-<!-- Botón inicial -->
-<button id="openBtn">Ábreme</button>
+<div class="container">
+  <!-- Botón inicial -->
+  <button id="openBtn">Ábreme</button>
+
+  <!-- Tarjeta con mensaje -->
+  <div class="card" id="messageCard">
+    <h1>Para Danna ✨</h1>
+    <div class="poem">
+Mientras hablábamos ese día, el cielo estaba sobre nosotros.
+... (el resto del mensaje aquí) ...
+    </div>
+
+    <button class="messageBtn" id="showPhotoBtn">Haz clic aquí</button>
+    <img id="personalPhoto" src="estrella.jpg" alt="Foto personal">
+    <div id="specialMessage">✨Entre todas las estrellas, tú eres la que más brilla ✨</div>
+  </div>
+</div>
 
 <!-- Música de fondo -->
 <audio id="backgroundMusic" loop>
@@ -137,28 +159,15 @@
   Tu navegador no soporta audio.
 </audio>
 
-<!-- Tarjeta con mensaje -->
-<div class="card" id="messageCard">
-  <h1>Para Danna ✨</h1>
-  <div class="poem">
-Mientras hablábamos ese día, el cielo estaba sobre nosotros.
-... (el resto del mensaje aquí) ...
-  </div>
-
-  <button class="messageBtn" id="showPhotoBtn">Haz clic aquí</button>
-  <img id="personalPhoto" src="estrella.jpg" alt="Foto personal">
-  <div id="specialMessage">✨Entre todas las estrellas, tú eres la que más brilla ✨</div>
-</div>
-
 <script>
   const openBtn = document.getElementById("openBtn");
   const music = document.getElementById("backgroundMusic");
   const messageCard = document.getElementById("messageCard");
 
   openBtn.addEventListener("click", () => {
-    music.play();
-    messageCard.style.display = "block";
-    openBtn.style.display = "none";
+    music.play();                  
+    messageCard.style.display = "block"; 
+    openBtn.style.display = "none";      
   });
 
   const showPhotoBtn = document.getElementById("showPhotoBtn");
@@ -171,6 +180,7 @@ Mientras hablábamos ese día, el cielo estaba sobre nosotros.
     showPhotoBtn.style.display = "none";
   });
 
+  // Estrellas flotantes
   const stars = ['✨','⭐','🌟','✦','✧'];
   const totalStars = 70;
 
