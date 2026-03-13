@@ -6,130 +6,123 @@
 <title>Para Danna ✨</title>
 
 <style>
-  body {
-    margin: 0;
-    padding: 0;
-    font-family: "Segoe UI", sans-serif;
-    background: radial-gradient(circle at top, #111 0%, #000 70%);
-    color: white;
-    min-height: 100vh;
-    overflow-y: auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-  }
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", sans-serif;
+  background: radial-gradient(circle at top, #111 0%, #000 70%);
+  color: white;
+  min-height: 100vh;
+  overflow-y: auto;
+  position: relative;
+}
 
-  /* Botón inicial */
-  #openBtn {
-    padding: 18px 36px;
-    font-size: 1.3rem;
-    font-weight: bold;
-    color: white;
-    background: linear-gradient(135deg, #8a5cff, #cfa7ff);
-    border: none;
-    border-radius: 25px;
-    cursor: pointer;
-    box-shadow: 0 0 20px rgba(255,255,255,0.3);
-    transition: transform 0.3s, box-shadow 0.3s;
-    z-index: 10;
-  }
+/* Botón inicial */
+#openBtn {
+  padding: 18px 36px;
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: white;
+  background: linear-gradient(135deg, #8a5cff, #cfa7ff);
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  box-shadow: 0 0 20px rgba(255,255,255,0.3);
+  transition: transform 0.3s, box-shadow 0.3s;
+  z-index: 10;
+}
 
-  #openBtn:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 25px #cfa7ff;
-  }
+#openBtn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px #cfa7ff;
+}
 
-  /* Tarjeta del mensaje */
-  .card {
-    display: none;
-    background: rgba(20, 20, 30, 0.85);
-    border-radius: 20px;
-    box-shadow: 0 0 25px rgba(255,255,255,0.15);
-    padding: 15px 20px;
-    width: 85%;
-    max-width: 400px;
-    text-align: center;
-    margin: 40px auto;
-    position: relative;
-    z-index: 1;
-    backdrop-filter: blur(6px);
-    transform: scale(0.77);
-  }
+/* Tarjeta del mensaje */
+.card {
+  display: none;
+  background: rgba(20, 20, 30, 0.85);
+  border-radius: 20px;
+  box-shadow: 0 0 25px rgba(255,255,255,0.15);
+  padding: 15px 20px;
+  width: 85%;
+  max-width: 400px;
+  text-align: center;
+  margin: 40px auto;
+  position: relative;
+  z-index: 1;
+  backdrop-filter: blur(6px);
+  transform: scale(0.77);
+}
 
-  h1 {
-    color: #cfa7ff;
-    font-size: 1.7rem;
-    margin-bottom: 6px;
-  }
+h1 {
+  color: #cfa7ff;
+  font-size: 1.7rem;
+  margin-bottom: 6px;
+}
 
-  .poem {
-    margin: 12px 0;
-    font-size: 0.9rem;
-    font-style: italic;
-    line-height: 1.5;
-    color: #ddd;
-    white-space: pre-line;
-  }
+.poem {
+  margin: 12px 0;
+  font-size: 0.9rem;
+  font-style: italic;
+  line-height: 1.5;
+  color: #ddd;
+  white-space: pre-line;
+}
 
-  button.messageBtn {
-    margin-top: 12px;
-    padding: 9px 18px;
-    font-size: 0.9rem;
-    background: linear-gradient(135deg, #8a5cff, #cfa7ff);
-    color: white;
-    border: none;
-    border-radius: 25px;
-    cursor: pointer;
-    transition: transform 0.3s, box-shadow 0.3s;
-  }
+button.messageBtn {
+  margin-top: 12px;
+  padding: 9px 18px;
+  font-size: 0.9rem;
+  background: linear-gradient(135deg, #8a5cff, #cfa7ff);
+  color: white;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
 
-  button.messageBtn:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 12px #cfa7ff;
-  }
+button.messageBtn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 12px #cfa7ff;
+}
 
-  #personalPhoto {
-    margin-top: 12px;
-    max-width: 100%;
-    border-radius: 12px;
-    display: none;
-    box-shadow: 0 0 20px rgba(255,255,255,0.3);
-  }
+#personalPhoto {
+  margin-top: 12px;
+  max-width: 100%;
+  border-radius: 12px;
+  display: none;
+  box-shadow: 0 0 20px rgba(255,255,255,0.3);
+}
 
-  #specialMessage {
-    margin-top: 8px;
-    font-size: 0.9rem;
-    color: #cfa7ff;
-    display: none;
-  }
+#specialMessage {
+  margin-top: 8px;
+  font-size: 0.9rem;
+  color: #cfa7ff;
+  display: none;
+}
 
-  /* Cometas blancas */
-  .meteor {
-    position: absolute;
-    font-size: 14px;
-    color: white;
-    opacity: 0.8;
-    text-shadow: 0 0 6px white;
-    animation-name: shoot;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-  }
+/* Cometas blancas */
+.meteor {
+  position: absolute;
+  font-size: 14px;
+  color: white;
+  opacity: 0.8;
+  text-shadow: 0 0 6px white;
+  animation-name: shoot;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
 
-  @keyframes shoot {
-    0% { transform: translate(0,0) rotate(0deg); opacity:1; }
-    100% { transform: translate(80vw, 80vh) rotate(360deg); opacity:0; }
-  }
+@keyframes shoot {
+  0% { transform: translate(0,0) rotate(0deg); opacity:1; }
+  100% { transform: translate(80vw, 100vh) rotate(360deg); opacity:0; }
+}
 
-  @media (max-width: 500px) {
-    .card { transform: scale(0.85); width: 90%; padding: 18px; }
-    #openBtn { font-size: 1.1rem; padding: 16px 32px; }
-    .meteor { font-size: 12px; }
-    @keyframes shoot {
-      0% { transform: translate(0,0) rotate(0deg); opacity:1; }
-      100% { transform: translate(70vw, 70vh) rotate(360deg); opacity:0; }
-    }
-  }
+@media (max-width: 500px) {
+  .card { transform: scale(0.85); width: 90%; padding: 18px; }
+  #openBtn { font-size: 1.1rem; padding: 16px 32px; }
+  .meteor { font-size: 12px; }
+}
 </style>
 </head>
 <body>
@@ -144,6 +137,7 @@
 <div class="card" id="messageCard">
   <h1>Para Danna ✨</h1>
   <div class="poem">
+    <!-- Aquí va todo tu mensaje completo -->
 Mientras hablábamos ese día, el cielo estaba sobre nosotros.
 
 Había miles de estrellas brillando en silencio. Eran como testigos de algo que parecía una simple conversación. Pero con el tiempo, significaría mucho más para mí.
@@ -224,19 +218,23 @@ openBtn.addEventListener("click", () => {
   messageCard.style.display = "block";
   openBtn.style.display = "none";
 
-  // Crear solo las dos últimas estrellas blancas: 🌟 y ✧
-  const stars = ['🌟','✧'];
+  // Crear estrellas fugaces blancas 🌟 y ✧
+  const stars = ['✦','✧'];
   const totalMeteors = 12;
+  const bodyHeight = document.body.scrollHeight; // altura total del contenido
 
   for (let i = 0; i < totalMeteors; i++) {
     const meteor = document.createElement('span');
     meteor.classList.add('meteor');
     meteor.textContent = stars[Math.floor(Math.random() * stars.length)];
     meteor.style.left = Math.random() * 80 + 'vw';
-    meteor.style.top = Math.random() * 10 + 'vh';
+    meteor.style.top = Math.random() * 10 + 'px';
     meteor.style.fontSize = (8 + Math.random() * 16) + 'px';
-    meteor.style.animationDuration = (0.6 + Math.random() * 0.9) + 's'; // más rápido
+    meteor.style.animationDuration = (0.6 + Math.random() * 0.9) + 's';
     meteor.style.animationDelay = Math.random() * 2 + 's';
+
+    // Ajustar animación final según altura total del body
+    meteor.style.setProperty('--fall-distance', bodyHeight + 'px');
     document.body.appendChild(meteor);
   }
 });
