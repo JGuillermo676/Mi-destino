@@ -54,7 +54,7 @@
     position: relative;
     z-index: 1;
     backdrop-filter: blur(6px);
-    transform: scale(0.77); /* 10% más grande */
+    transform: scale(0.77);
   }
 
   h1 {
@@ -122,7 +122,7 @@
       opacity: 1;
     }
     100% {
-      transform: translate(80vw, 80vh) rotate(360deg); /* límite para no salirse de la pantalla */
+      transform: translate(80vw, 80vh) rotate(360deg);
       opacity: 0;
     }
   }
@@ -223,6 +223,22 @@ Y para mí, esa persona siempre serás tú.
     music.play();
     messageCard.style.display = "block";
     openBtn.style.display = "none";
+
+    // Crear cometas con emojis al abrir
+    const stars = ['✨','⭐','🌟','✦','✧'];
+    const totalMeteors = 15; // menos cantidad
+
+    for (let i = 0; i < totalMeteors; i++) {
+      const meteor = document.createElement('span');
+      meteor.classList.add('meteor');
+      meteor.textContent = stars[Math.floor(Math.random() * stars.length)];
+      meteor.style.left = Math.random() * 90 + 'vw';
+      meteor.style.top = Math.random() * 5 + 'vh';
+      meteor.style.fontSize = (12 + Math.random() * 20) + 'px';
+      meteor.style.animationDuration = (1.6 + Math.random() * 2) + 's'; // 20% más rápido
+      meteor.style.animationDelay = Math.random() * 5 + 's';
+      document.body.appendChild(meteor);
+    }
   });
 
   const showPhotoBtn = document.getElementById("showPhotoBtn");
@@ -234,22 +250,6 @@ Y para mí, esa persona siempre serás tú.
     specialMsg.style.display = "block";
     showPhotoBtn.style.display = "none";
   });
-
-  // Crear cometas con emojis limitando la posición final
-  const stars = ['✨','⭐','🌟','✦','✧'];
-  const totalMeteors = 30;
-
-  for (let i = 0; i < totalMeteors; i++) {
-    const meteor = document.createElement('span');
-    meteor.classList.add('meteor');
-    meteor.textContent = stars[Math.floor(Math.random() * stars.length)];
-    meteor.style.left = Math.random() * 90 + 'vw'; // no más del 90%
-    meteor.style.top = Math.random() * 20 + 'vh';
-    meteor.style.fontSize = (10 + Math.random() * 20) + 'px';
-    meteor.style.animationDuration = (2 + Math.random() * 3) + 's';
-    meteor.style.animationDelay = Math.random() * 5 + 's';
-    document.body.appendChild(meteor);
-  }
 </script>
 
 </body>
