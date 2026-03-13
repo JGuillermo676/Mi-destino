@@ -17,6 +17,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
   }
 
   /* Botón de inicio */
@@ -31,6 +32,7 @@
     cursor: pointer;
     box-shadow: 0 0 20px rgba(255,255,255,0.3);
     transition: transform 0.3s, box-shadow 0.3s;
+    z-index: 10;
   }
 
   #openBtn:hover {
@@ -102,25 +104,25 @@
     display: none;
   }
 
-  /* Estrellas fugaces */
+  /* Cometas (estrellas fugaces con emoji) */
   .meteor {
     position: absolute;
-    top: 0;
-    width: 2px;
-    height: 80px;
-    background: linear-gradient(45deg, white, rgba(255,255,255,0));
+    top: -50px;
+    font-size: 14px;
     opacity: 0.8;
-    transform: rotate(45deg);
-    animation: shoot linear forwards;
+    text-shadow: 0 0 6px white;
+    animation-name: shoot;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
   }
 
   @keyframes shoot {
     0% {
-      transform: translate(0, 0) rotate(45deg);
+      transform: translate(0, 0) rotate(0deg);
       opacity: 1;
     }
     100% {
-      transform: translate(100vw, 100vh) rotate(45deg);
+      transform: translate(120vw, 120vh) rotate(360deg);
       opacity: 0;
     }
   }
@@ -142,8 +144,9 @@
 <div class="card" id="messageCard">
   <h1>Para Danna ✨</h1>
   <div class="poem">
-<!-- Mensaje largo aquí (lo puedes mantener igual que antes) -->
 Mientras hablábamos ese día, el cielo estaba sobre nosotros...
+
+<!-- El resto del mensaje -->
   </div>
 
   <button class="messageBtn" id="showPhotoBtn">Haz clic aquí</button>
@@ -172,14 +175,17 @@ Mientras hablábamos ese día, el cielo estaba sobre nosotros...
     showPhotoBtn.style.display = "none";
   });
 
-  // Crear estrellas fugaces aleatorias
-  const totalMeteors = 10; // cantidad de estrellas fugaces
+  // Crear cometas con emojis
+  const stars = ['✨','⭐','🌟','✦','✧'];
+  const totalMeteors = 30; // número de cometas
+
   for (let i = 0; i < totalMeteors; i++) {
-    const meteor = document.createElement('div');
+    const meteor = document.createElement('span');
     meteor.classList.add('meteor');
+    meteor.textContent = stars[Math.floor(Math.random() * stars.length)];
     meteor.style.left = Math.random() * 100 + 'vw';
-    meteor.style.top = Math.random() * 20 + 'vh';
-    meteor.style.animationDuration = (1 + Math.random() * 1.5) + 's';
+    meteor.style.fontSize = (10 + Math.random() * 20) + 'px';
+    meteor.style.animationDuration = (2 + Math.random() * 3) + 's';
     meteor.style.animationDelay = Math.random() * 5 + 's';
     document.body.appendChild(meteor);
   }
