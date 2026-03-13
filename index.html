@@ -11,8 +11,8 @@
     padding: 0;
     font-family: "Segoe UI", sans-serif;
 
-    /* Fondo de toda la página */
-    background-image: url('fondo.jpg'); /* Reemplaza con tu imagen */
+    /* Fondo desde GitHub Pages */
+    background-image: url('https://raw.githubusercontent.com/TU_USUARIO/TU_REPO/main/fondo.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -37,6 +37,8 @@
     cursor: pointer;
     box-shadow: 0 0 20px rgba(255,255,255,0.3);
     transition: transform 0.3s, box-shadow 0.3s;
+    z-index: 10;
+    position: relative;
   }
 
   #openBtn:hover {
@@ -44,10 +46,10 @@
     box-shadow: 0 0 25px #cfa7ff;
   }
 
-  /* Tarjeta del mensaje (inicialmente oculta) */
+  /* Tarjeta del mensaje */
   .card {
     display: none;
-    background: rgba(20, 20, 30, 0.85); /* vidrio semitransparente */
+    background: rgba(20, 20, 30, 0.65); /* vidrio más ligero para ver el fondo */
     border-radius: 20px;
     box-shadow: 0 0 25px rgba(255,255,255,0.15);
     padding: 15px 20px;
@@ -56,7 +58,7 @@
     text-align: center;
     margin: 40px auto;
     position: relative;
-    z-index: 1;
+    z-index: 5;
     backdrop-filter: blur(6px);
     transform: scale(0.7);
   }
@@ -108,7 +110,6 @@
     display: none;
   }
 
-  /* Estrellas flotando */
   .emoji {
     position: absolute;
     top: -50px;
@@ -141,7 +142,7 @@
   <h1>Para Danna ✨</h1>
   <div class="poem">
 Mientras hablábamos ese día, el cielo estaba sobre nosotros.
-... (el resto del mensaje) ...
+... (el resto del mensaje aquí) ...
   </div>
 
   <button class="messageBtn" id="showPhotoBtn">Haz clic aquí</button>
@@ -155,12 +156,11 @@ Mientras hablábamos ese día, el cielo estaba sobre nosotros.
   const messageCard = document.getElementById("messageCard");
 
   openBtn.addEventListener("click", () => {
-    music.play();                  // empieza la música
-    messageCard.style.display = "block"; // muestra todo el mensaje
-    openBtn.style.display = "none";      // oculta el botón inicial
+    music.play();
+    messageCard.style.display = "block";
+    openBtn.style.display = "none";
   });
 
-  // Mostrar foto y mensaje especial
   const showPhotoBtn = document.getElementById("showPhotoBtn");
   const photo = document.getElementById("personalPhoto");
   const specialMsg = document.getElementById("specialMessage");
@@ -171,7 +171,6 @@ Mientras hablábamos ese día, el cielo estaba sobre nosotros.
     showPhotoBtn.style.display = "none";
   });
 
-  // Estrellas flotantes
   const stars = ['✨','⭐','🌟','✦','✧'];
   const totalStars = 70;
 
