@@ -238,14 +238,14 @@ openBtn.addEventListener("click", () => {
 
   // Crear estrellas fugaces blancas 🌟 y ✧
   const stars = ['🌟','✧'];
-  const totalMeteors = 12;
-  const bodyHeight = document.body.scrollHeight; // altura total del contenido
+  const totalMeteors = Math.floor(12 * 0.3); // 70% menos estrellas
+  const bodyHeight = document.body.scrollHeight;
 
   for (let i = 0; i < totalMeteors; i++) {
     const meteor = document.createElement('span');
     meteor.classList.add('meteor');
     meteor.textContent = stars[Math.floor(Math.random() * stars.length)];
-    meteor.style.left = Math.random() * 80 + 'vw';
+    meteor.style.left = Math.random() * 30 + 'vw'; // empiezan más desde la izquierda
     meteor.style.top = Math.random() * 10 + 'px';
     meteor.style.fontSize = (8 + Math.random() * 16) + 'px';
     meteor.style.animationDuration = (0.6 + Math.random() * 0.9) + 's';
