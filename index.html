@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="es">
 <head>
 <meta charset="UTF-8">
@@ -11,13 +11,9 @@
     padding: 0;
     font-family: "Segoe UI", sans-serif;
     background: radial-gradient(circle at top, #111 0%, #000 70%);
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    position: relative;
     color: white;
+    min-height: 100vh;
+    overflow-y: auto; /* Permite scroll vertical */
   }
 
   /* Tarjeta */
@@ -29,11 +25,11 @@
     width: 85%;
     max-width: 350px;
     text-align: center;
+    margin: 40px auto; /* centrado horizontal con margen arriba y abajo */
     position: relative;
     z-index: 1;
     backdrop-filter: blur(6px);
-
-    transform: scale(0.7); /* ← 30% más pequeña */
+    transform: scale(0.7);
   }
 
   h1 {
