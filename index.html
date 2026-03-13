@@ -10,7 +10,9 @@
     margin: 0;
     padding: 0;
     font-family: "Segoe UI", sans-serif;
-    background: radial-gradient(circle at top, #111 0%, #000 70%);
+    /* Fondo con imagen */
+    background: url('fondo1.jpg') no-repeat center center fixed;
+    background-size: cover;
     color: white;
     min-height: 100vh;
     overflow-y: auto;
@@ -19,7 +21,7 @@
     align-items: center;
   }
 
-  /* Botón de inicio */
+  /* Botón inicial */
   #openBtn {
     padding: 20px 40px;
     font-size: 1.5rem;
@@ -31,6 +33,7 @@
     cursor: pointer;
     box-shadow: 0 0 20px rgba(255,255,255,0.3);
     transition: transform 0.3s, box-shadow 0.3s;
+    z-index: 10;
   }
 
   #openBtn:hover {
@@ -126,7 +129,7 @@
 
 <!-- Música de fondo -->
 <audio id="backgroundMusic" loop>
-  <source src="musica3.mp3" type="audio/mpeg">
+  <source src="musica.mp3" type="audio/mpeg">
   Tu navegador no soporta audio.
 </audio>
 
@@ -227,7 +230,7 @@ Y para mí, esa persona siempre serás tú.
   });
 
   // Estrellas flotantes
-  const stars = ['✨','⭐','🌟','✦','✧'];
+  const stars = [','✦','✧'];
   const totalStars = 70;
 
   for (let i = 0; i < totalStars; i++) {
