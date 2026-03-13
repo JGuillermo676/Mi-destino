@@ -1,3 +1,10 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Para Danna ✨</title>
+
 <style>
 body {
   margin: 0;
@@ -29,7 +36,6 @@ body {
   box-shadow: 0 0 20px rgba(255,255,255,0.3);
   transition: transform 0.3s, box-shadow 0.3s;
   z-index: 10;
-  /* Centrado automático en flexbox */
   align-self: center;
 }
 
@@ -48,7 +54,7 @@ body {
   width: 85%;
   max-width: 400px;
   text-align: center;
-  margin: 20px auto; /* margen superior e inferior */
+  margin: 20px auto;
   position: relative;
   z-index: 1;
   backdrop-filter: blur(6px);
@@ -136,3 +142,130 @@ button.messageBtn:hover {
   .meteor { font-size: 12px; }
 }
 </style>
+</head>
+<body>
+
+<button id="openBtn">Ábreme</button>
+
+<audio id="backgroundMusic" loop>
+  <source src="musica.mp3" type="audio/mpeg">
+  Tu navegador no soporta audio.
+</audio>
+
+<div class="card" id="messageCard">
+  <h1>Para Danna ✨</h1>
+  <div class="poem">
+    <!-- Aquí va todo tu mensaje completo -->
+Mientras hablábamos ese día, el cielo estaba sobre nosotros.
+
+Había miles de estrellas brillando en silencio. Eran como testigos de algo que parecía una simple conversación. Pero con el tiempo, significaría mucho más para mí.
+
+Tal vez para el mundo fue solo un momento cualquiera. Una noche normal, como tantas otras que pasan sin que nadie las recuerde. Pero para mí fue diferente. Sin darme cuenta, entre palabras simples, risas y momentos que parecían pequeños, estaba empezando a conocer a alguien que poco a poco ocuparía un lugar muy especial en mi vida.
+
+A veces pienso en lo curioso que es todo esto. El mundo es enorme. Hay millones de personas viviendo sus propias historias. Hay millones de caminos que cada uno puede tomar. Y millones de coincidencias que ocurren cada segundo.
+
+Y aunque haya tantas posibilidades, nuestras vidas se cruzaron.
+
+Entre tantas personas, encontré a alguien como tú.
+
+Al principio, todo parecía sencillo. Solo dos personas hablando, conociéndose poco a poco. Pero con el tiempo, algo empezó a cambiar. Empecé a esperar esos momentos, esas conversaciones. Empecé a sentir que algo era distinto.
+
+Ese día, mientras hablábamos bajo el cielo estrellado, algo empezó a crecer dentro de mí. Tal vez no lo entendía del todo en ese momento. Pero ahora sí lo sé. Ese fue uno de esos momentos que, aunque parezcan simples, se quedan en el corazón.
+
+Me gusta pensar que las estrellas estaban observando todo en silencio. Como si guardaran ese instante. Como si supieran que algún día recordaría ese momento con una sonrisa.
+
+Hay momentos en la vida que parecen pequeños. Pero con el tiempo, te das cuenta de que eran el comienzo de algo importante.
+
+Y para mí, ese fue uno de ellos.
+
+Cada vez que pienso en ti, pienso en lo increíble que fue que nuestras vidas coincidieran. La vida decidió cruzar nuestra historia con la tuya.
+
+Aunque ahora haya distancia entre nosotros, siempre recuerdo que el cielo sigue siendo el mismo.
+
+Las mismas estrellas que brillaban aquella noche siguen ahí. Siguen iluminando la noche. Siguen estando presentes.
+
+Están sobre ti y sobre mí.
+
+A veces pienso que tú también miras el cielo. Tal vez una noche tranquila. Tal vez ves una estrella brillante. O simplemente te quedas mirando el cielo.
+
+Y en ese mismo instante, puede que yo también esté mirando hacia arriba.
+
+Dos personas en lugares diferentes. Mirando las mismas estrellas.
+
+La distancia deja de sentirse tan grande.
+
+Aunque no estemos en el mismo sitio, compartimos algo enorme. El mismo cielo. Las mismas estrellas. El mismo universo que estaba allí el día que empezamos a hablar.
+
+Eso me gusta recordarlo.
+
+Me recuerda que hay cosas que siguen conectando a las personas.
+
+Me recuerda que hay momentos que se quedan contigo para siempre.
+
+Y me recuerda lo afortunado que fui el día que nuestras vidas coincidieron.
+
+La vida te pone delante a personas que simplemente pasan. Pero otras veces te pone delante a alguien que cambia tus días.
+
+Alguien que aparece en tus pensamientos sin avisar.
+
+Alguien que hace que las cosas simples se sientan un poco más bonitas.
+
+Y si miras el cielo y recuerdas este momento, quiero que sepas algo.
+
+En algún lugar, bajo estas mismas estrellas, hay alguien que sonríe cuando piensa en ti.
+
+Alguien que se siente afortunado de haberte encontrado.
+
+Alguien que nunca olvidará el día en que empezó todo.
+
+Y para mí, esa persona siempre serás tú.
+  </div>
+
+  <button class="messageBtn" id="showPhotoBtn">Haz clic aquí</button>
+  <img id="personalPhoto" src="estrella.jpg" alt="Foto personal">
+  <div id="specialMessage">✨Entre todas las estrellas, tú eres la que más brilla ✨</div>
+</div>
+
+<script>
+const openBtn = document.getElementById("openBtn");
+const music = document.getElementById("backgroundMusic");
+const messageCard = document.getElementById("messageCard");
+
+openBtn.addEventListener("click", () => {
+  music.play();
+  messageCard.style.display = "block";
+  openBtn.style.display = "none";
+
+  // Crear estrellas fugaces blancas 🌟 y ✧
+  const stars = ['🌟','✧'];
+  const totalMeteors = 12;
+  const bodyHeight = document.body.scrollHeight; // altura total del contenido
+
+  for (let i = 0; i < totalMeteors; i++) {
+    const meteor = document.createElement('span');
+    meteor.classList.add('meteor');
+    meteor.textContent = stars[Math.floor(Math.random() * stars.length)];
+    meteor.style.left = Math.random() * 80 + 'vw';
+    meteor.style.top = Math.random() * 10 + 'px';
+    meteor.style.fontSize = (8 + Math.random() * 16) + 'px';
+    meteor.style.animationDuration = (0.6 + Math.random() * 0.9) + 's';
+    meteor.style.animationDelay = Math.random() * 2 + 's';
+
+    meteor.style.setProperty('--fall-distance', bodyHeight + 'px');
+    document.body.appendChild(meteor);
+  }
+});
+
+const showPhotoBtn = document.getElementById("showPhotoBtn");
+const photo = document.getElementById("personalPhoto");
+const specialMsg = document.getElementById("specialMessage");
+
+showPhotoBtn.addEventListener("click", () => {
+  photo.style.display = "block";
+  specialMsg.style.display = "block";
+  showPhotoBtn.style.display = "none";
+});
+</script>
+
+</body>
+</html>
