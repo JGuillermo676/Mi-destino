@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Para Danna ✨</title>
 
-<!-- 📊 GOOGLE ANALYTICS -->
+<!-- 📊 GOOGLE ANALYTICS (NO TOCA TU CÓDIGO) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-4ZMY03QL2Q"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -13,11 +13,6 @@
 
   gtag('js', new Date());
   gtag('config', 'G-4ZMY03QL2Q');
-
-  // 🧪 evento de prueba al cargar
-  gtag('event', 'page_view_danna_stars');
-
-  console.log("🔥 GA cargado: Danna Stars");
 </script>
 
 <style>
@@ -31,6 +26,7 @@ body {
   overflow-y: auto;
   position: relative;
 
+  /* Centrar contenido vertical y horizontal */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -50,6 +46,7 @@ body {
   box-shadow: 0 0 20px rgba(255,255,255,0.3);
   transition: transform 0.3s, box-shadow 0.3s;
   z-index: 10;
+  align-self: center;
 }
 
 #openBtn:hover {
@@ -57,7 +54,7 @@ body {
   box-shadow: 0 0 25px #cfa7ff;
 }
 
-/* Tarjeta */
+/* Tarjeta del mensaje */
 .card {
   display: none;
   background: rgba(20, 20, 30, 0.85);
@@ -68,6 +65,8 @@ body {
   max-width: 400px;
   text-align: center;
   margin: 20px auto;
+  position: relative;
+  z-index: 1;
   backdrop-filter: blur(6px);
   transform: scale(0.77);
 }
@@ -96,10 +95,12 @@ button.messageBtn {
   border: none;
   border-radius: 25px;
   cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 
 button.messageBtn:hover {
   transform: scale(1.05);
+  box-shadow: 0 0 12px #cfa7ff;
 }
 
 #personalPhoto {
@@ -107,6 +108,7 @@ button.messageBtn:hover {
   max-width: 100%;
   border-radius: 12px;
   display: none;
+  box-shadow: 0 0 20px rgba(255,255,255,0.3);
 }
 
 #specialMessage {
@@ -116,17 +118,38 @@ button.messageBtn:hover {
   display: none;
 }
 
-/* estrellas */
+/* Cometas blancas */
 .meteor {
   position: absolute;
   font-size: 14px;
+  color: white;
   opacity: 0.8;
-  animation: shoot linear infinite;
+  text-shadow: 0 0 6px white;
+  animation-name: shoot;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
 }
 
 @keyframes shoot {
-  0% { transform: translate(0,0); opacity:1; }
-  100% { transform: translate(80vw, 100vh); opacity:0; }
+  0% { transform: translate(0,0) rotate(0deg); opacity:1; }
+  100% { transform: translate(80vw, 100vh) rotate(360deg); opacity:0; }
+}
+
+/* Ajustes para móvil */
+@media (max-width: 500px) {
+  body {
+    padding: 20px;
+  }
+  .card { 
+    transform: scale(0.85); 
+    width: 95%; 
+    padding: 18px; 
+  }
+  #openBtn { 
+    font-size: 1.2rem; 
+    padding: 16px 28px; 
+  }
+  .meteor { font-size: 12px; }
 }
 </style>
 </head>
@@ -143,14 +166,29 @@ button.messageBtn:hover {
   <h1>Para Danna ✨</h1>
 
   <div class="poem">
-    <!-- TU TEXTO COMPLETO IGUAL -->
-    (se mantiene igual que lo enviaste)
+Mientras hablábamos aquel día, el cielo estaba sobre nosotros. Era un cielo muy especial, como un lienzo enorme pintado con miles de luces que parpadeaban. Cada estrella tenía su propio brillo y su propia historia, y todas estaban juntas, como si se hubieran reunido para vernos en ese momento. Había un silencio muy tranquilo que lo envolvía todo, un silencio que no necesitaba palabras, porque hasta las cosas más simples parecían tener un significado profundo.
+
+Había miles de estrellas brillando en silencio. Eran como testigos invisibles de algo que parecía una conversación normal. Pero con el tiempo, me di cuenta de que no había nada normal en ese instante. Nuestra charla, nuestras risas suaves, cada palabra y cada pausa, comenzaron a crear algo más profundo, algo que se volvería fundamental en mi vida.
+
+Tal vez para el mundo, ese momento fue solo un momento cualquiera. Una noche más que se pierde entre los días. Pero para mí, fue diferente. Sin darme cuenta, estaba empezando a conocer a alguien que ocuparía un lugar muy especial en mi corazón.
+
+A veces pienso en lo curioso que es la vida. El mundo es enorme, con millones de personas viviendo sus propias historias, con sus propias alegrías y dolores. Hay millones de caminos que cada uno puede tomar, y millones de coincidencias que ocurren cada segundo. Y aunque haya tantas posibilidades, nuestras vidas se cruzaron.
+
+Encontré a alguien como tú, alguien que hace que lo cotidiano se vuelva especial, y que las horas pasen sin que apenas las notes. Al principio, todo parecía sencillo. Solo dos personas hablando, conociéndose poco a poco. Pero con el tiempo, algo empezó a cambiar. Empecé a esperar esos momentos con ansias, a buscar cualquier excusa para que las palabras surgieran, para que las risas fluyeran.
+
+Ese día, mientras hablábamos bajo el cielo estrellado, algo empezó a crecer dentro de mí. Tal vez no lo entendía del todo en ese momento, pero ahora sé que ese fue uno de esos momentos que, aunque parecen simples, se quedan para siempre.
+
+Me gusta imaginar que las estrellas estaban observando todo en silencio, como guardianes de nuestro instante, como testigos silenciosos que guardaban aquel momento en su brillo.
+
+Hay momentos en la vida que parecen pequeños, pero con el tiempo, uno se da cuenta de que esos momentos son comienzos.
+
+Y para mí, ese fue uno de esos comienzos.
   </div>
 
   <button class="messageBtn" id="showPhotoBtn">Haz clic aquí</button>
 
   <img id="personalPhoto" src="estrella.png" alt="Foto personal">
-  <div id="specialMessage">✨SIEMPRE SERÁS MI ESTRELLA FAVORITA ✨</div>
+  <div id="specialMessage">✨SIEMPRES SERAS MI ESTRELLA FAVORITA ✨</div>
 </div>
 
 <script>
@@ -163,25 +201,6 @@ openBtn.addEventListener("click", () => {
   music.play();
   messageCard.style.display = "block";
   openBtn.style.display = "none";
-
-  // 📊 evento analytics
-  gtag('event', 'open_poem_danna');
-
-  const stars = ['🌟','✧'];
-  const totalMeteors = Math.floor(12 * 0.3);
-
-  for (let i = 0; i < totalMeteors; i++) {
-    const meteor = document.createElement('span');
-    meteor.classList.add('meteor');
-    meteor.textContent = stars[Math.floor(Math.random() * stars.length)];
-    meteor.style.left = Math.random() * 30 + 'vw';
-    meteor.style.top = Math.random() * 10 + 'px';
-    meteor.style.fontSize = (8 + Math.random() * 16) + 'px';
-    meteor.style.animationDuration = (0.6 + Math.random() * 0.9) + 's';
-    meteor.style.animationDelay = Math.random() * 2 + 's';
-
-    document.body.appendChild(meteor);
-  }
 });
 
 const showPhotoBtn = document.getElementById("showPhotoBtn");
@@ -192,9 +211,6 @@ showPhotoBtn.addEventListener("click", () => {
   photo.style.display = "block";
   specialMsg.style.display = "block";
   showPhotoBtn.style.display = "none";
-
-  // 📊 evento analytics
-  gtag('event', 'photo_revealed_danna');
 });
 
 </script>
